@@ -93,14 +93,14 @@
 						<b class="arrow"></b>
 					</li>
 
-					<li <?php if ($judul == 'Disclaimer') {echo 'class="active"';} ?>>
+					<!-- <li <?php if ($judul == 'Disclaimer') {echo 'class="active"';} ?>>
 						<a href="<?=base_url()?>Redaktur/Disclaimer">
 							<i class="menu-icon glyphicon glyphicon-warning-sign"></i>
 							<span class="menu-text"> Disclaimer </span>
 						</a>
 
 						<b class="arrow"></b>
-					</li>
+					</li> -->
 
 					<li class="">
 						<a href="<?=base_url()?>Login/out">
