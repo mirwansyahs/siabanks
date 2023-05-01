@@ -17,7 +17,7 @@ class M_mail extends CI_Model {
 
                'smtp_host' => 'mail.lanishod.com',
 
-               'smtp_user' => 'admin@lanishod.com',    // Ganti dengan email gmail kamu
+               'smtp_user' => 'support@lanishod.com',    // Ganti dengan email gmail kamu
 
                'smtp_pass' => 'lanishod123',      // Password gmail kamu
 

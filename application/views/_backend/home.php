@@ -37,6 +37,7 @@
                 
                 <!-- <center> -->
                 <?php 
+                $Disable = false;
                     if($Satuan == "km"){
                         if ($Distance > 14){
                             $Disable = true;
@@ -44,7 +45,7 @@
                     }
                 ?>
                     
-                <?php if ($Disable){
+                <?php if (@$Disable){
                     echo $this->alert->info('Yaaahhhhh!, radius kamu lebih dari 14 km dari admin terdekat yaitu '.$AdminName.'.<br/>Silahkan hubungi admin untuk meminta pembukaan cabang diwilayah anda melalui <a href="https://api.whatsapp.com/send?phone=6283825287989&text=Halo Admin, tolong agar dapat membuka cabang disekitar '.$this->userdata->alamat.'&source=&data=&app_absent="><span class="fa fa-whatsapp"></span> Whatsapp</a> ');
                 }else{?>
                     <?php if (empty($validateDay)){ ?>
@@ -427,11 +428,11 @@
                 //.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
                 .DataTable( {
                     bAutoWidth: false,
-                    "aoColumns": [
-                      { "bSortable": false },
-                      null, null, null, null, null,<?php if ($this->userdata->user_status == "0" || $this->userdata->user_status == "1"){ echo "null,"; } ?>
-                      { "bSortable": false }
-                    ],
+                    // "aoColumns": [
+                    //   { "bSortable": false },
+                    //   null, null, null, null, null,<?php if ($this->userdata->user_status == "0" || $this->userdata->user_status == "1"){ echo "null,"; } ?>
+                    //   { "bSortable": false }
+                    // ],
                     "aaSorting": [],
                     
                     
@@ -440,12 +441,12 @@
                     //"sAjaxSource": "http://127.0.0.1/table.php"   ,
             
                     //,
-                    "sScrollY": "800px",
-                    "bPaginate": true,
+                    // "sScrollY": "800px",
+                    // "bPaginate": true,
             
-                    "sScrollX": "100%",
-                    "sScrollXInner": "120%",
-                    "bScrollCollapse": false,
+                    // "sScrollX": "100%",
+                    // "sScrollXInner": "120%",
+                    // "bScrollCollapse": false,
                     //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
                     //you may want to wrap the table inside a "div.dataTables_borderWrap" element
             

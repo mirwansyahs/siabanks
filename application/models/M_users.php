@@ -251,7 +251,7 @@ class M_users extends CI_Model {
 		$string = '';
 		for($i=0;$i < $jumlah;$i++){
 			$random = rand(0, strlen($data)-1);
-			$string .= $data{$random};
+			$string .= $data[$random];
 		}
 		
 		return strtolower($string);

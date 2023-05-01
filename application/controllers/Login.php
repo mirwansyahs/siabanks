@@ -81,7 +81,9 @@ class Login extends CI_Controller{
 							//echo $data['TextMail'];
 							$result = $this->M_mail->sendMail($data);
 							if ($result){
-								$this->session->set_flashdata("msg", $this->alert->info("Pendaftaran berhasil!<br>", "Silahkan cek email ".$data['Email']."!", '12px'));
+								// $this->session->set_flashdata("msg", $this->alert->info("Pendaftaran berhasil!<br>", "Silahkan cek email ".$data['Email']."!", '12px'));
+								$this->session->set_flashdata("msg", $this->alert->info("Pendaftaran berhasil!<br>", "Server sedang error, password anda <b>".$data['user_pass']."</b><br>Silahkan ubah kata sandi anda!", '12px'));
+								
 								// redirect("Login");
 							}else{
 								$this->session->set_flashdata("msg", $this->alert->info("Pendaftaran berhasil!<br>", "Server sedang error, password anda <b>".$data['user_pass']."</b>!<br>Silahkan ubah kata sandi anda!", '12px'));
