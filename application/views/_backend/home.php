@@ -45,10 +45,7 @@
                     }
                 ?>
                     
-                <?php if (@$Disable){
-                    echo $this->alert->info('Yaaahhhhh!, radius kamu lebih dari 14 km dari admin terdekat yaitu '.$AdminName.'.<br/>Silahkan hubungi admin untuk meminta pembukaan cabang diwilayah anda melalui <a href="https://api.whatsapp.com/send?phone=6283825287989&text=Halo Admin, tolong agar dapat membuka cabang disekitar '.$this->userdata->alamat.'&source=&data=&app_absent="><span class="fa fa-whatsapp"></span> Whatsapp</a> ');
-                }else{?>
-                    <?php if (empty($validateDay)){ ?>
+                
                     <form action="<?=base_url()?>Redaktur/Sampah/prosesadd" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group" style="text-align: center">
@@ -104,9 +101,6 @@
                             </div>
                         </div>
                     </form>
-                    <?php } else{ echo "Anda telah menyetorkan sampah hari ini!. <br/> Silahkan tunggu besok hari. :D"; }?>
-                <!-- </center> -->
-            <?php } ?>
             </div>
 
             <div id="redeem" class="tab-pane">
