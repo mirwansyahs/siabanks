@@ -33,9 +33,11 @@ class Home extends AUTH_Controller {
 			$data['dataSampah']		= $this->M_sampah->select_memberid($this->userdata->MemberID);
 			$data['validateDay'] = $this->M_sampah->validateDay();
 		}elseif ($this->userdata->user_status == "1"){
-			$data['dataSampah']		= $this->M_sampah->select_kangsampah();
-		}elseif ($this->userdata->user_status == "0"){
 			$data['dataSampah']		= $this->M_sampah->select_all();
+			// $data['dataSampah']		= $this->M_sampah->select_kangsampah();
+		}elseif ($this->userdata->user_status == "0"){
+			// $data['dataSampah']		= $this->M_sampah->select_all();
+			$data['dataSampah']		= $this->M_sampah->select_kangsampah();
 		}
 
 		$jum=$this->M_item->get_item();
