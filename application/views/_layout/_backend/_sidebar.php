@@ -36,7 +36,7 @@
 					</li>
 					<?php } ?>
 
- 					<?php if ($this->userdata->user_status == "0"){ ?>
+ 					<?php if ($this->userdata->user_status != "2"){ ?>
 					<li <?php if ($judul == 'Top up saldo') {echo 'class="active"';} ?>>
 						<a href="<?=base_url()?>Redaktur/Topup">
 							<i class="menu-icon fa fa-dollar"></i>
