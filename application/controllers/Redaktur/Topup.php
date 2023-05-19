@@ -9,7 +9,7 @@ class Topup extends AUTH_Controller {
 		$this->load->model("M_topup");
 		$this->load->library('upload');
 		
-		if ($this->userdata->user_status == "1"){
+		if ($this->userdata->user_status == "2"){
 			$this->session->set_flashdata("msg", $this->alert->failed("Anda bukan administrator"));
 			redirect('Redaktur/Home');
 		}
