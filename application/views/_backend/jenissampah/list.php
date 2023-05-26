@@ -128,7 +128,7 @@
 
 									<div class="">
 
-										<input type="number" id="form-field-first1" placeholder="" value="0" class="form-control" name="harga" min="0" max="200" required="required" />
+										<input type="number" id="form-field-first1" placeholder="" value="0" class="form-control" name="harga" min="0" max="99999" required="required" />
 
 									</div>
 
@@ -222,7 +222,7 @@
 
 										<div class="">
 
-											<input type="number" id="form-field-first1" placeholder="" value="<?=$value->harga?>" class="form-control" name="harga" min="0" max="200" required="required" />
+											<input type="number" id="form-field-first1" placeholder="" value="<?=$value->harga?>" class="form-control" name="harga" min="0" max="99999" required="required" />
 
 										</div>
 

@@ -13,6 +13,7 @@
 					<th class="center">#</th>
 					<th class="hidden-480">Image</th>
 					<th>Nama</th>
+					<th>Saldo</th>
 					<th class="hidden-480">Email</th>
 					<th>Jarak</th>
 					<th>Hak Akses</th>
@@ -34,6 +35,7 @@
 					<td class="center"><?=$no++?></td>
 					<td class="hidden-480"><img src="<?=base_url()?>assets/images/<?php if(empty($key->Image)){ echo "people/male/0.jpg"; }else{ echo "Members/".$key->MemberID."/".$key->Image; } ?>" style="width: 50px;"></td>
 					<td><?=$key->Nama_Depan." ".$key->Nama_Belakang?></td>
+					<td>Rp.<?=number_format($key->Saldo, 0, ',', '.')?></td>
 					<td class="hidden-480"><?=$key->Email?></td>
 					<!-- L1 = Admin, L2 = User -->
 					<td>
@@ -144,7 +146,7 @@
 					bAutoWidth: false,
 					"aoColumns": [
 					  { "bSortable": false },
-					  null, null,null, null, null, null, 
+					  null, null,null, null, null, null, null,
 					  { "bSortable": false }
 					],
 					"aaSorting": [],

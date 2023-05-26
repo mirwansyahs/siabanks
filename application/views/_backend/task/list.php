@@ -25,7 +25,7 @@
                 <tr>
                     <td class="center"><?=$no++?></td>
                     <td><?= date_format(date_create($key->tanggal_lapor), "d M Y H:i:s")?></td>
-                    <?php if ($this->userdata->user_status == "0" || $this->userdata->user_status == "1"){ ?>
+                    <?php if ($this->userdata->user_status != "2"){ ?>
                     <th><?=$key->Nama_Depan. " ".$key->Nama_Belakang?></th>
                     <?php } ?>
                     <td>
@@ -93,7 +93,7 @@
                     <td class="center">
                         <span>
                             <?php  
-                            if ($this->userdata->user_status == "1") {
+                            if ($this->userdata->user_status != "2") {
                                 if ($key->status_sampah == "0"){ echo "Belum diambil."; }
                                     elseif ($key->status_sampah == "1"){
                                         $oleh = $this->db->select("concat_ws(' ', tb_members.Nama_Depan, tb_members.Nama_Belakang) AS Nama")
@@ -147,7 +147,8 @@
 					bAutoWidth: false,
 					"aoColumns": [
 					  { "bSortable": false },
-					  null, null,null, null, null,
+					  null, null,null, 
+                    <?php if ($this->userdata->user_status != "2"){ ?>null, <?php } ?>
 					  { "bSortable": false }
 					],
 					"aaSorting": [],

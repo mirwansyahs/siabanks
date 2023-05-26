@@ -121,7 +121,7 @@ class M_sampah extends CI_Model {
 						   ->where('tb_pengumpulansampah.id_jenis = tb_jenissampah.id_jenis')
 						   ->get('tb_members, tb_pengumpulansampah, tb_jenissampah')->row();
 
-		$this->adding_commission($member->MemberID, $member->harga*$member->jumlah_sampah, 0);
+		$this->adding_commission($member->MemberID, $member->Saldo + ($member->harga*$member->jumlah_sampah), 0);
 
 		$status_sampah	= array(
 				'status_sampah'			=> '1'

@@ -128,8 +128,6 @@ class Home extends AUTH_Controller {
 		if ($result){
 			if ($result < 0){
 				$result = 0;
-			}elseif($result > 10000){
-				$result = 10000;
 			}else{
 				$result = $result;
 			}

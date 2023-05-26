@@ -25,7 +25,7 @@
 
 						<b class="arrow"></b>
 					</li>
-					<?php if ($this->userdata->user_status == "1"){ ?>
+					<?php if ($this->userdata->user_status != "2"){ ?>
 					<li <?php if ($judul == 'Sudah dikerjakan.') {echo 'class="active"';} ?>>
 						<a href="<?=base_url()?>Redaktur/Task">
 							<i class="menu-icon fa fa-file-text"></i>

@@ -2,6 +2,7 @@
 
 <?php $jns_sampah = $this->M_sampah->select_jenis_sampah()?>
 
+<?php if ($this->userdata->user_status == "2") { ?>
 <div class="col-xs-12">
     <div class="tabbable">
         <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab4">
@@ -68,7 +69,7 @@
                                 <label class="col-xs-12"> Jumlah Sampah </label>
 
                                 <div class="col-xs-12">
-                                    <input type="number" name="jumlah_sampah" id="jumlah_sampah" class="form-control" onblur="validation()" value="3" min="3" max="10" />
+                                    <input type="number" name="jumlah_sampah" id="jumlah_sampah" class="form-control" onblur="validation()" value="3" min="3" max="99999" />
                                 </div>
                             </div>
                         </div>
@@ -124,7 +125,7 @@
                                                     <?php }else if ($data->Saldo >= $key->price){?>
                                                     <i class="ace-icon fa fa-check green"></i>
                                                     <?php } ?>
-                                                    Rp.<?=number_format($key->price)?>,- <small>
+                                                    Saldo Rp.<?=number_format($key->price)?> = <?=number_format($key->itemname)?> Pulsa <small>
                                                 </li>
                                             </ul>
 
@@ -161,7 +162,7 @@
         <br/>
     </div>
 </div>
-
+<?php } ?>
 <div class="col-xs-12">
 
     <div class="clearfix">
@@ -176,6 +177,9 @@
                 <th width="15%">Nama</th>
                 <?php } ?>
                 <th width="20%">Lokasi</th>
+                <?php if ($this->userdata->user_status != "2"){ ?>
+                <th width="20%">Saldo Masyarakat</th>
+                <?php } ?>
                 <th width="10%">Jenis</th>
                 <th width="5%">Jumlah</th>
                 <th width="20%">Bukti</th>
@@ -188,7 +192,7 @@
                 <td class="center"><?=$no++?></td>
                 <td><?= date_format(date_create($key->tanggal_lapor), "d M Y H:i:s")?></td>
                 <?php if ($this->userdata->user_status == "0" || $this->userdata->user_status == "1"){ ?>
-                <th><?=$key->Nama_Depan. " ".$key->Nama_Belakang?></th>
+                <td><?=$key->Nama_Depan. " ".$key->Nama_Belakang?></td>
                 <?php } ?>
                 <td>
                     <center><?=$key->alamat?>.</center>
@@ -219,6 +223,9 @@
                         </div>
                     </center>
                 </td>
+                <?php if ($this->userdata->user_status != "2"){ ?>
+                <td>Rp<?=number_format($key->Saldo, 0, ',', '.')?></td>
+                <?php } ?>
                 <td>
                     <select name="id_jenis" id="nama_jenisUpdate" onchange="saveUpdate('<?=$key->id_sampah?>', 'id_jenis')" class="form-control" <?=($key->status_sampah != "0")?'disabled="disabled"':'';?>>
                     <?php foreach ($jns_sampah->result() as $jns) { ?>
