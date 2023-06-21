@@ -77,7 +77,7 @@ class Login extends CI_Controller{
 								"%Email%" 		=> $data['Email'],
 								"%Password%" 	=> $data['user_pass']
 							);
-							$data['TextMail'] 	= strtr(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/SIABANKS/application/views/_layout/_emailRegist.php'), $arr);
+							$data['TextMail'] 	= strtr(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/application/views/_layout/_emailRegist.php'), $arr);
 							//echo $data['TextMail'];
 							$result = $this->M_mail->sendMail($data);
 							if ($result){
