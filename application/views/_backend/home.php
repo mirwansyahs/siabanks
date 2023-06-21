@@ -66,7 +66,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group">
-                                <label class="col-xs-12"> Jumlah Sampah (/kg) </label>
+                                <label class="col-xs-12"> Jumlah Sampah (*/kg) </label>
 
                                 <div class="col-xs-12">
                                     <input type="number" name="jumlah_sampah" id="jumlah_sampah" class="form-control" onblur="validation()" value="3" min="3" max="99999" />
