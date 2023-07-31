@@ -181,7 +181,7 @@
                 <th width="20%">Saldo Masyarakat</th>
                 <?php } ?>
                 <th width="10%">Jenis</th>
-                <th width="5%">Jumlah</th>
+                <th width="5%">Jumlah/kg</th>
                 <th width="20%">Bukti</th>
                 <th width="10%" class="center">Status</th>
             </tr>
@@ -390,7 +390,7 @@
             const id_jenis = $('#nama_jenisUpdate');
             $.post('<?= base_url() ?>Redaktur/Home/saveUpdate','ID='+IDSampah+'&Prefix='+prefix+'&value='+id_jenis.val(),function(data){
                 try{
-                    
+                    alert('Berhasil mengubah jenis sampah.');
                 }catch(error){
                 }
             })
@@ -399,7 +399,7 @@
             const jumlah_sampah = $('#jumlah_sampahUpdate');
             $.post('<?= base_url() ?>Redaktur/Home/saveUpdate','ID='+IDSampah+'&Prefix='+prefix+'&value='+jumlah_sampah.val(),function(data){
                 try{
-                    
+                    alert('Berhasil mengubah jumlah sampah.');
                 }catch(error){
                 }
             })
