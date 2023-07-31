@@ -227,14 +227,14 @@
                 <td>Rp<?=number_format($key->Saldo, 0, ',', '.')?></td>
                 <?php } ?>
                 <td>
-                    <select name="id_jenis" id="nama_jenisUpdate" onchange="saveUpdate('<?=$key->id_sampah?>', 'id_jenis')" class="form-control" <?=($key->status_sampah != "0")?'disabled="disabled"':'';?>>
+                    <select name="id_jenis" id="nama_jenisUpdate<?=$key->id_sampah?>" onchange="saveUpdate('<?=$key->id_sampah?>', 'id_jenis')" class="form-control" <?=($key->status_sampah != "0")?'disabled="disabled"':'';?>>
                     <?php foreach ($jns_sampah->result() as $jns) { ?>
                         <option value="<?=$jns->id_jenis?>" <?=($jns->nama_jenis == $key->nama_jenis)?'selected="selected"':'';?>><?=$jns->nama_jenis?></option>
                     <?php } ?>
                     </select>
                 </td>
                 <td>
-                    <input type="number" name="jumlah_sampah" id="jumlah_sampahUpdate" value="<?=$key->jumlah_sampah?>" onblur="saveUpdate('<?=$key->id_sampah?>', 'jumlah_sampah')" class="form-control" min="3" max="200" <?=($key->status_sampah != "0")?'disabled="disabled"':'';?> />
+                    <input type="number" name="jumlah_sampah" id="jumlah_sampahUpdate<?=$key->id_sampah?>" value="<?=$key->jumlah_sampah?>" onblur="saveUpdate('<?=$key->id_sampah?>', 'jumlah_sampah')" class="form-control" min="3" max="200" <?=($key->status_sampah != "0")?'disabled="disabled"':'';?> />
                 </td>
                 <td>
                     <div class="hidden-sm hidden-xs action-buttons">
@@ -387,8 +387,7 @@
     }
     function saveUpdate(IDSampah = '', prefix = ''){
         if (prefix == "id_jenis"){
-            const id_jenis = $('#nama_jenisUpdate');
-            $.post('<?= base_url() ?>Redaktur/Home/saveUpdate','ID='+IDSampah+'&Prefix='+prefix+'&value='+id_jenis.val(),function(data){
+            $.post('<?= base_url() ?>Redaktur/Home/saveUpdate','ID='+IDSampah+'&Prefix='+prefix+'&value='+$('#nama_jenisUpdate'+IDSampah).val(),function(data){
                 try{
                     alert('Berhasil mengubah jenis sampah.');
                 }catch(error){
@@ -396,8 +395,7 @@
             })
 
         }else if (prefix == "jumlah_sampah"){
-            const jumlah_sampah = $('#jumlah_sampahUpdate');
-            $.post('<?= base_url() ?>Redaktur/Home/saveUpdate','ID='+IDSampah+'&Prefix='+prefix+'&value='+jumlah_sampah.val(),function(data){
+            $.post('<?= base_url() ?>Redaktur/Home/saveUpdate','ID='+IDSampah+'&Prefix='+prefix+'&value='+$('#jumlah_sampahUpdate'+IDSampah).val(),function(data){
                 try{
                     alert('Berhasil mengubah jumlah sampah.');
                 }catch(error){
