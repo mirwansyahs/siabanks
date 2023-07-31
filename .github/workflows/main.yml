@@ -11,7 +11,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        server: ftp.solidproject.id
-        username: solidproject@solidproject.id
-        password: solidproject2022
-        server-dir: /public_html/siabanks/
+        server: ftp.lanishod.com
+        username: lanishod
+        password: pn0Y5a1D.Al7B!
+        server-dir: /domains/solidproject.id/public_html/siabanks/
